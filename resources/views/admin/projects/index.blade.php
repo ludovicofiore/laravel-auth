@@ -22,7 +22,7 @@
                     <td>{{ $project->publication_date }}</td>
                     <td>
                         <a href="{{ route('admin.projects.show', $project->id) }}">Mostra</a>
-                        <a href="#">Modifica</a>
+                        <a href="{{ route('admin.projects.edit', $project->id) }}">Modifica</a>
                         <a href="#">Elimina</a>
                     </td>
                 </tr>
