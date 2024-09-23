@@ -22,6 +22,8 @@
     @section('content')
         @yield('content')
     @endsection
+
+
 </body>
 
 </html>
