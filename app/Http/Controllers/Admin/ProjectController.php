@@ -13,7 +13,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::all();
+        $projects = Project::paginate(10);
 
         return view('admin.projects.index', compact('projects'));
     }
@@ -39,7 +39,13 @@ class ProjectController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $projects = Project::find($id);
+
+        if(!isset($projects)){
+            abort(404);
+        }
+
+        return view('admin.projects.show', compact('projects'));
     }
 
     /**

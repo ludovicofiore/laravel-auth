@@ -9,8 +9,8 @@
                 <th scope="col">id</th>
                 <th scope="col">Titolo</th>
                 <th scope="col">Descrizione</th>
-                <th scope="col">Immagine</th>
                 <th scope="col">Data di pubblicazione</th>
+                <th>Azioni</th>
             </tr>
         </thead>
         <tbody>
@@ -19,10 +19,15 @@
                     <th>{{ $project->id }}</th>
                     <td>{{ $project->title }}</td>
                     <td>{{ $project->description }}</td>
-                    <td>{{ $project->cover_img }}</td>
                     <td>{{ $project->publication_date }}</td>
+                    <td>
+                        <a href="{{ route('admin.projects.show', $project->id) }}">Mostra</a>
+                        <a href="#">Modifica</a>
+                        <a href="#">Elimina</a>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
+    {{ $projects->links() }}
 @endsection
