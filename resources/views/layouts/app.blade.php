@@ -14,8 +14,12 @@
 <body>
 
     @include('admin.partials.header')
-    @include('admin.partials.aside')
-    @yield('content')
+
+    <div class="d-flex wrapper">
+        @include('admin.partials.aside')
+        @yield('content')
+
+    </div>
 
 
 </body>

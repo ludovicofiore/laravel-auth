@@ -9,3 +9,20 @@ aside {
         }
     }
 }
+
+ul {
+    list-style-type: none;
+}
+
+header {
+    max-height: 55px;
+}
+
+.wrapper {
+    height: calc(100vh - 57px);
+}
+
+aside {
+    width: 150px;
+    height: 100%;
+}
