@@ -6,7 +6,11 @@
         <h2>{{ $projects->title }}</h2>
 
         <div>
-            <img src="{{ $projects->cover_img }}" alt="{{ $projects->title }}">
+            @if ($projects->cover_img === null)
+                <p class="text-danger">Immagine non disponibile</p>
+            @else
+                <img src="{{ $projects->cover_img }}" alt="{{ $projects->title }}">
+            @endif
         </div>
 
         <div>

@@ -8,7 +8,7 @@
             <tr>
                 <th scope="col">id</th>
                 <th scope="col">Titolo</th>
-                <th scope="col">Descrizione</th>
+
                 <th scope="col">Data di pubblicazione</th>
                 <th>Azioni</th>
             </tr>
@@ -18,18 +18,22 @@
                 <tr>
                     <th>{{ $project->id }}</th>
                     <td>{{ $project->title }}</td>
-                    <td>{{ $project->description }}</td>
+
                     <td>{{ $project->publication_date }}</td>
                     <td>
-                        <a class="btn btn-primary" href="{{ route('admin.projects.show', $project->id) }}">Mostra</a>
-                        <a class="btn btn-warning" href="{{ route('admin.projects.edit', $project->id) }}">Modifica</a>
-                        <form action="{{ route('admin.projects.destroy', $project) }}" method="post"
-                            onsubmit="return confirm('Sei sicuro di voler eliminare {{ $project->title }}?')">
-                            @csrf
-                            @method('DELETE')
+                        <div class="d-flex">
 
-                            <button class="btn btn-danger" type="submit">Elimina</button>
-                        </form>
+                            <a class="btn btn-primary mx-1" href="{{ route('admin.projects.show', $project->id) }}">Mostra</a>
+                            <a class="btn btn-warning mx-1"
+                                href="{{ route('admin.projects.edit', $project->id) }}">Modifica</a>
+                            <form action="{{ route('admin.projects.destroy', $project) }}" method="post"
+                                onsubmit="return confirm('Sei sicuro di voler eliminare {{ $project->title }}?')">
+                                @csrf
+                                @method('DELETE')
+
+                                <button class="btn btn-danger mx-1" type="submit">Elimina</button>
+                            </form>
+                        </div>
 
                     </td>
                 </tr>
